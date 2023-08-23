@@ -1,0 +1,72 @@
+.threadsLogoIcon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+.threads {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  line-height: 19px;
+  font-weight: 400;
+  font-family: inherit;
+}
+.logo {
+  width: 401px;
+  height: 56px;
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-base) var(--padding-base) var(--padding-base)
+    var(--padding-xs);
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-9xs);
+}
+.hamburgerIcon,
+.logo2Icon {
+  position: relative;
+  width: 22.01px;
+  height: 22px;
+}
+.hamburgerIcon {
+  width: 20px;
+  height: 10px;
+}
+.righInfos {
+  justify-content: flex-start;
+  gap: var(--gap-3xl);
+}
+.avatar,
+.nav,
+.righInfos {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.avatar {
+  width: 400px;
+  height: 56px;
+  padding: var(--padding-base) var(--padding-base) var(--padding-base)
+    var(--padding-xs);
+  box-sizing: border-box;
+  justify-content: flex-end;
+}
+.nav {
+  align-self: stretch;
+  border-bottom: 1px solid var(--color-darkslategray);
+  justify-content: space-between;
+  text-align: left;
+  font-size: var(--font-size-3xl);
+  color: var(--color-white);
+  font-family: var(--font-poppins);
+}
+@media screen and (max-width: 1200px) {
+  .logo {
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: var(--padding-29xl);
+    padding-right: var(--padding-29xl);
+    box-sizing: border-box;
+  }
+}

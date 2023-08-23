@@ -1,0 +1,90 @@
+.avatarIcon {
+  position: relative;
+  width: 36px;
+  height: 36px;
+}
+.thread {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.shareSomethingCool {
+  border: 0;
+  font-weight: 500;
+  font-family: var(--font-inter);
+  font-size: var(--font-size-sm);
+  background-color: transparent;
+  align-self: stretch;
+  position: relative;
+  line-height: 19px;
+  color: #fff;
+  text-align: left;
+  outline: 0;
+}
+.infos {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.paperclipIcon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.actions1 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.sendIcon {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.actions,
+.actions2 {
+  display: flex;
+  flex-direction: row;
+}
+.actions2 {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-4xs) var(--padding-5xs) var(--padding-6xs);
+  background-color: var(--color-gray-100);
+  border-radius: var(--br-21xl);
+  align-items: center;
+  justify-content: center;
+}
+.actions {
+  align-self: stretch;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.infosActions,
+.threadinput {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-xs);
+}
+.infosActions {
+  flex: 1;
+  flex-direction: column;
+}
+.threadinput {
+  align-self: stretch;
+  border-bottom: 1px solid var(--color-darkslategray);
+  overflow: hidden;
+  flex-direction: row;
+  padding: var(--padding-base) var(--padding-base) var(--padding-base)
+    var(--padding-xs);
+}
