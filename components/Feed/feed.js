@@ -1,31 +1,42 @@
 import ThreadInput from "./thread-input";
 import Thread from "./thread";
 import styles from "./feed.module.css";
+import { useState, useEffect } from "react";
+
 const Feed = () => {
+  const [threads, setThreads] = useState([]);
+  const getThreads = async () => {
+    try {
+      const request = await fetch("/api/threads");
+      const data = await request.json();
+      console.log("feed.js 11 | data", data);
+      setThreads(data);
+    } catch (error) {
+      console.log("feed.js 12 | error getting threads", error);
+    }
+  };
+
+  useEffect(() => {
+    getThreads();
+  }, []);
+
   return (
     <div className={styles.feed}>
-      <ThreadInput />
-      <Thread
-        authorImage="/avatar.svg"
-        threadContent="I’ve been exploring ways of setting up variables in Figma if you have two different sets of global colours for light and dark themes with multiple brands. If you want to learn more about it, DM me, please"
-        likes="7 Likes"
-        username="aura"
-        timeSpentSincePublished="2min"
-      />
-      <Thread
-        authorImage="/avatar2.svg"
-        threadContent={`guys, just see that now we have a "Save for Later" I've been waiting for this so much`}
-        likes="2 Likes"
-        username="aura"
-        timeSpentSincePublished="2min"
-      />
-      <Thread
-        authorImage="/avatar3.svg"
-        threadContent="Hold onto your seats, folks! The new iPhone is coming in hot, ready to rock our world! Imagine the stunning photos and videos I'll capture with this beauty! 📸💥 #BringItOnNewiPhone #BeyondExcited"
-        likes="16 Likes"
-        username="aura"
-        timeSpentSincePublished="2min"
-      />
+      <ThreadInput getThreads={getThreads} />
+      {threads &&
+        threads.data?.map((thread) => {
+          return (
+            <Thread
+              authorImage="/avatar.svg"
+              threadContent={thread.content}
+              likes={`${thread.likes || 0} likes`}
+              username={thread.user}
+              timeSpentSincePublished={thread.timestamp}
+              getThreads={getThreads}
+              id={thread._id}
+            />
+          );
+        })}
     </div>
   );
 };

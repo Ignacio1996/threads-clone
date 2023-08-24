@@ -5,7 +5,36 @@ const Thread = ({
   likes,
   username,
   timeSpentSincePublished,
+  id,
+  getThreads,
 }) => {
+  const addLike = async () => {
+    console.log("thread.js 10 | adding like");
+    try {
+      const request = await fetch(`/api/threads/${id}`, {
+        method: "PUT",
+        body: JSON.stringify({ type: "addLike", id }),
+      });
+      const data = await request.json();
+      getThreads();
+      console.log("thread.js 15 | data", data);
+    } catch (error) {
+      console.log("thread.js 17 | error", error);
+    }
+  };
+
+  const deleteThread = async () => {
+    try {
+      const request = await fetch(`/api/threads/${id}`, {
+        method: "DELETE",
+      });
+      const data = await request.json();
+      getThreads();
+      console.log("thread.js 31 | data", data);
+    } catch (error) {
+      console.log("thread.js 31 | error deleting", error.message);
+    }
+  };
   return (
     <div className={styles.thread}>
       <div className={styles.thread1}>
@@ -18,7 +47,7 @@ const Thread = ({
               <div className={styles.username}>{username}</div>
               <div className={styles.rightInfos}>
                 <div className={styles.min}>{timeSpentSincePublished}</div>
-                <div className={styles.dots}>
+                <div className={styles.dots} onClick={deleteThread}>
                   <div className={styles.dotsChild} />
                   <div className={styles.dotsChild} />
                   <div className={styles.dotsChild} />
@@ -27,7 +56,7 @@ const Thread = ({
             </div>
             <div className={styles.iveBeenExploring}>{threadContent}</div>
           </div>
-          <div className={styles.actions}>
+          <div className={styles.actions} onClick={addLike}>
             <img className={styles.likeIcon} alt="" src="/like3.svg" />
           </div>
           <div className={styles.reactions}>
