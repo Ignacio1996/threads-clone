@@ -29,6 +29,9 @@ const Thread = ({
           </div>
           <div className={styles.actions}>
             <img className={styles.likeIcon} alt="" src="/like3.svg" />
+            <img className={styles.likeIcon} alt="" src="/comment.svg" />
+            <img className={styles.likeIcon} alt="" src="/repost.svg" />
+            <img className={styles.likeIcon} alt="" src="/send.svg" />
           </div>
           <div className={styles.reactions}>
             <div className={styles.likes}>{likes}</div>

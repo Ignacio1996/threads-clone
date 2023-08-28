@@ -18,7 +18,7 @@ const ThreadInput = () => {
             <img className={styles.paperclipIcon} alt="" src="/paperclip.svg" />
           </div>
           <button className={styles.actions2}>
-            <img className={styles.sendIcon} alt="" src="/send.svg" />
+            <img className={styles.sendIcon} alt="" src="/send1.svg" />
           </button>
         </div>
       </div>
