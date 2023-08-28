@@ -27,7 +27,7 @@ const Feed = () => {
         threads.data?.map((thread) => {
           return (
             <Thread
-              authorImage="/avatar.svg"
+              authorImage="/avatar2.svg"
               threadContent={thread.content}
               likes={`${thread.likes || 0} likes`}
               username={thread.user}

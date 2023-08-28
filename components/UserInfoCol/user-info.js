@@ -3,7 +3,7 @@ const UserInfo = () => {
   return (
     <div className={styles.userinfo}>
       <div className={styles.infos}>
-        <img className={styles.avatarBigIcon} alt="" src="/avatar-big.svg" />
+        <img className={styles.avatarBigIcon} alt="" src="/avatar-big1.svg" />
         <div className={styles.infos1}>
           <div className={styles.infos2}>
             <h2 className={styles.alissonRochinski}>Alisson Rochinski</h2>
